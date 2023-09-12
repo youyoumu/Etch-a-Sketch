@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;   
+}
+
+#gridContainer {   
+    width: 600px;
+    height: 600px;
+    display: flex;  
+    flex-wrap: wrap;
+    border-style: dashed;
+}
+
+.grid {
+    background-color: blue;
+    outline: solid 1px black;
+    outline-offset: -1px;
+}
+
