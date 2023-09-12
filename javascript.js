@@ -14,12 +14,21 @@ function createGrid(gridSize) {
 createGrid(gridSize);
 let everyGrid = document.querySelectorAll('.grid');
 
-everyGrid.forEach(test); 
+everyGrid.forEach(detectHover); 
 
-function test (grid) {
+function detectHover(grid) {
     grid.addEventListener('mouseover', onClick)
 }
 
 function onClick() {
     this.style.backgroundColor = "black";
 }
+
+function runRemoveGrid() {
+    everyGrid.forEach(removeGrid);
+}
+
+function removeGrid(grid) {
+    grid.remove();
+}
+
