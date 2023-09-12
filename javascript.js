@@ -20,6 +20,6 @@ function test (grid) {
     grid.addEventListener('mouseover', onClick)
 }
 
-function onClick(grid) {
-    console.log(grid);
+function onClick() {
+    this.style.backgroundColor = "black";
 }
