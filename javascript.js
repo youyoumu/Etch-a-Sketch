@@ -12,3 +12,14 @@ function createGrid(gridSize) {
 }
 
 createGrid(gridSize);
+let everyGrid = document.querySelectorAll('.grid');
+
+everyGrid.forEach(test); 
+
+function test (grid) {
+    grid.addEventListener('mouseover', onClick)
+}
+
+function onClick(grid) {
+    console.log(grid);
+}
