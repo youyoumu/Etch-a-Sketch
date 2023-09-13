@@ -2,6 +2,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;   
+    background-color:rgb(255, 254, 206);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #gridContainer {   
@@ -9,17 +11,24 @@ body {
     height: 600px;
     display: flex;  
     flex-wrap: wrap;
-    border-style: dashed;
+    border-style: solid;
 }
 
 .grid {
-    background-color: blue;
-    outline: solid 1px black;
-    outline-offset: -1px;
+    background-color: rgb(243, 227, 227);
+    outline: solid 0.1px rgba(0, 0, 0, 0.027);
+    outline-offset: 0cap;
 }
 
 #sizeButton {
-    background-color: aqua;
+    background-color: rgb(231, 195, 171);
     margin: 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
+    font-size: 14px;
+    font-weight: bold;
 }
 

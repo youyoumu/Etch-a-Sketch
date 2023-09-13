@@ -22,7 +22,7 @@ function detectHover(grid) {
 }
 
 function onClick() {
-    this.style.backgroundColor = "black";
+    this.style.backgroundColor = "#363636";
 }
 
 function runRemoveGrid() {
