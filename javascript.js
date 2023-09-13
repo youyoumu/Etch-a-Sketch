@@ -1,5 +1,6 @@
 let gridSize = 16;
 let gridContainter = document.querySelector('#gridContainer');
+let sizeButton = document.querySelector('#sizeButton');
 
 function createGrid(gridSize) {
     for (i = 0; i < gridSize*gridSize; i++) {
@@ -31,4 +32,16 @@ function runRemoveGrid() {
 function removeGrid(grid) {
     grid.remove();
 }
+
+//sizeButton.addEventListener('click');
+
+function changeSize(newSize) {
+    runRemoveGrid();
+    createGrid(newSize);
+    everyGrid = document.querySelectorAll('.grid');
+    everyGrid.forEach(detectHover); 
+}
+
+
+
 

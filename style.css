@@ -1,6 +1,7 @@
 body {
     display: flex;
-    justify-content: center;   
+    align-items: center;
+    flex-direction: column;   
 }
 
 #gridContainer {   
@@ -15,5 +16,10 @@ body {
     background-color: blue;
     outline: solid 1px black;
     outline-offset: -1px;
+}
+
+#sizeButton {
+    background-color: aqua;
+    margin: 10px;
 }
 
