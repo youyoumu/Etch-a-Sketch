@@ -43,8 +43,9 @@ function changeSize(newSize) {
 }
 
 function changeSizeButton() {
-    let newSize = prompt("Enter the new size");
-    changeSize(newSize);
+    let newSize = prompt("Enter the new size (max 100)");
+    if (newSize>100) {changeSize(100);}
+    else {changeSize(newSize);}
 }
 
 
