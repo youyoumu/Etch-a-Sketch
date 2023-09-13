@@ -33,13 +33,18 @@ function removeGrid(grid) {
     grid.remove();
 }
 
-//sizeButton.addEventListener('click');
+sizeButton.addEventListener('click', changeSizeButton);
 
 function changeSize(newSize) {
     runRemoveGrid();
     createGrid(newSize);
     everyGrid = document.querySelectorAll('.grid');
     everyGrid.forEach(detectHover); 
+}
+
+function changeSizeButton() {
+    let newSize = prompt("Enter the new size");
+    changeSize(newSize);
 }
 
 
