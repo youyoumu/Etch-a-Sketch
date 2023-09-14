@@ -43,9 +43,18 @@ function changeSize(newSize) {
 }
 
 function changeSizeButton() {
-    let newSize = prompt("Enter the new size (max 100)");
-    if (newSize>100) {changeSize(100);}
-    else {changeSize(newSize);}
+    let newSize;
+    newSize = prompt("Enter the new size (max 100)");
+    newSize = parseInt(newSize);
+
+    if(Number.isInteger(newSize)) {
+        if(newSize > 0) {
+            if (newSize>100) {changeSize(100);}
+            else {changeSize(newSize);}
+        }
+        else {alert("not a valid number"); return;}
+    }
+    else {alert("not a valid number"); return;}
 }
 
 
