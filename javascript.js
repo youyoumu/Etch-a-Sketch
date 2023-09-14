@@ -1,6 +1,9 @@
 let gridSize = 16;
 let gridContainter = document.querySelector('#gridContainer');
 let sizeButton = document.querySelector('#sizeButton');
+let mode = 2;
+let opacity = 0.2;
+
 
 
 function createGrid(gridSize) {
@@ -23,12 +26,9 @@ function detectHover(grid) {
 }
 
 function onClick() {
-    let R = getRandomNumber0255();
-    let G = getRandomNumber0255();
-    let B = getRandomNumber0255();
-    //this.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
-    //this.style.backgroundColor = `rgba(0, 0, 0, 0.3)`;
-    addOpacity(this);
+    if(mode === 1) {addOpacity(this);}
+    else if (mode === 2) {addRainbow(this);}
+    else {erase(this);};
 }
 
 function runRemoveGrid() {
@@ -69,7 +69,7 @@ function getRandomNumber0255() {
 }
 
 function addOpacity(grid) {
-    let newOpacity = 0.3;
+    let newOpacity = opacity;
     let currentOpacity = grid.style.backgroundColor;
     if (currentOpacity === "") {
         grid.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
@@ -78,10 +78,20 @@ function addOpacity(grid) {
         newOpacity = grid.style.backgroundColor;
         newOpacity = newOpacity.slice(14,17);
         newOpacity = parseFloat(newOpacity);
-        if (newOpacity < 1.0) {newOpacity = newOpacity + 0.1}
+        if (newOpacity < 1.0) {newOpacity = newOpacity + opacity}
         grid.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
     }
 }
 
+function addRainbow(grid) {
+    let R = getRandomNumber0255();
+    let G = getRandomNumber0255();
+    let B = getRandomNumber0255();
+    grid.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+}
+
+function erase(grid) {
+    grid.style.backgroundColor = "";
+}
 
 
