@@ -22,7 +22,10 @@ function detectHover(grid) {
 }
 
 function onClick() {
-    this.style.backgroundColor = "#363636";
+    let R = getRandomNumber0255();
+    let G = getRandomNumber0255();
+    let B = getRandomNumber0255();
+    this.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
 }
 
 function runRemoveGrid() {
@@ -57,6 +60,12 @@ function changeSizeButton() {
     else {alert("not a valid number"); return;}
 }
 
+function getRandomNumber0255() {
+    let number = Math.floor(Math.random() * 256);
+    return number;
+}
+
+getRandomNumber0255();
 
 
 
