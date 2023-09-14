@@ -1,7 +1,7 @@
 body {
     display: flex;
     align-items: center;
-    flex-direction: column;   
+    justify-content: center; 
     background-color:rgb(255, 254, 206);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -12,6 +12,7 @@ body {
     display: flex;  
     flex-wrap: wrap;
     border-style: solid;
+    margin-left: 10px;
 }
 
 .grid {
@@ -20,7 +21,7 @@ body {
     outline-offset: 0cap;
 }
 
-#sizeButton {
+#sizeButton, #modeNormal, #modeRainbow, #modeEraser {
     background-color: rgb(231, 195, 171);
     margin: 10px;
     border-radius: 10px;
@@ -30,5 +31,10 @@ body {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
     font-size: 14px;
     font-weight: bold;
+}
+
+#sizeButtonContainer {
+    display: flex;
+    justify-content: center;
 }
 
