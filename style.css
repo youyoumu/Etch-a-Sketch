@@ -33,7 +33,7 @@ body {
     font-weight: bold;
 }
 
-#sizeButtonContainer, #colorPickerContainer {
+#sizeButtonContainer, #colorPickerContainer, #modeContainer {
     display: flex;
     justify-content: center;
 }
@@ -55,3 +55,10 @@ body {
     margin-top: 10px;
 }
 
+#title {
+    text-align: center;
+    font-size: 48px;
+    padding: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.479);
+    font-style: italic;
+}
