@@ -33,7 +33,7 @@ body {
     font-weight: bold;
 }
 
-#sizeButtonContainer, #colorPickerContainer, #modeContainer {
+#sizeButtonContainer, #colorPickerContainer, #modeContainer, #sliderContainer {
     display: flex;
     justify-content: center;
 }
@@ -61,4 +61,15 @@ body {
     padding: 30px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.479);
     font-style: italic;
+}
+
+#opacity {
+    margin-top: 5px;
+    width: 150px;
+}
+
+#sliderContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
 }

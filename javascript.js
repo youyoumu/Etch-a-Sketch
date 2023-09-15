@@ -9,7 +9,7 @@ let mode = 1;
 let opacity = 0.2;
 let colorPicker = document.querySelector('#colorPicker');
 let brushColor = "rgba(0, 0, 0,";
-
+let opacitySlider = document.querySelector('#opacity');
 
 function createGrid(gridSize) {
     for (i = 0; i < gridSize*gridSize; i++) {
@@ -50,6 +50,11 @@ modeRainbow.addEventListener('click', switchRainbowMode);
 modeEraser.addEventListener('click', switchEraserMode);
 clearButton.addEventListener('click', clear);
 colorPicker.addEventListener('change', getColor);
+opacitySlider.addEventListener('change', changeOpacity);
+
+function changeOpacity(slider) {
+    opacity = slider.target.value / 10;
+}
 
 function getColor(e) {
     let color = e.target.value;
@@ -60,8 +65,6 @@ function getColor(e) {
     console.log(color);
     brushColor = color;
 }
-
-
 
 function changeSize(newSize) {
     runRemoveGrid();
@@ -102,16 +105,18 @@ function getRandomNumber0255() {
 function addOpacity(grid) {
     let newOpacity = opacity;
     let currentOpacity = grid.style.backgroundColor;
+
     if (currentOpacity === "") {
         grid.style.backgroundColor = `${brushColor} ${newOpacity})`;
     }
     else {
         newOpacity = grid.style.backgroundColor;
-        console.log(newOpacity);
+        let isRGBa = newOpacity.slice(0, 4);
+        if (isRGBa === "rgb(") {return;}
         newOpacity = newOpacity.slice(-3);
         newOpacity = parseFloat(newOpacity);
-        console.log(newOpacity);
         if (newOpacity < 1.0) {newOpacity = newOpacity + opacity}
+        else {newOpacity = 0.9};
         grid.style.backgroundColor = `${brushColor} ${newOpacity})`;
     }
 }
