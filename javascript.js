@@ -58,11 +58,8 @@ function changeOpacity(slider) {
 
 function getColor(e) {
     let color = e.target.value;
-    console.log(color);
     color = hexToRgbA(color);
-    console.log(color);
     color = color.slice(0, color.length - 2);
-    console.log(color);
     brushColor = color;
 }
 
