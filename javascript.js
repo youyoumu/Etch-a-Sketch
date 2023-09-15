@@ -7,7 +7,8 @@ let modeRainbow = document.querySelector('#modeRainbow');
 let modeEraser = document.querySelector('#modeEraser');
 let mode = 1;
 let opacity = 0.2;
-
+let colorPicker = document.querySelector('#colorPicker');
+let brushColor = "rgba(0, 0, 0,";
 
 
 function createGrid(gridSize) {
@@ -48,6 +49,17 @@ modeNormal.addEventListener('click', switchNormalMode);
 modeRainbow.addEventListener('click', switchRainbowMode);
 modeEraser.addEventListener('click', switchEraserMode);
 clearButton.addEventListener('click', clear);
+colorPicker.addEventListener('change', getColor);
+
+function getColor(e) {
+    let color = e.target.value;
+    console.log(color);
+    color = hexToRgbA(color);
+    console.log(color);
+    color = color.slice(0, color.length - 2);
+    console.log(color);
+    brushColor = color;
+}
 
 
 
@@ -91,14 +103,16 @@ function addOpacity(grid) {
     let newOpacity = opacity;
     let currentOpacity = grid.style.backgroundColor;
     if (currentOpacity === "") {
-        grid.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+        grid.style.backgroundColor = `${brushColor} ${newOpacity})`;
     }
     else {
         newOpacity = grid.style.backgroundColor;
-        newOpacity = newOpacity.slice(14,17);
+        console.log(newOpacity);
+        newOpacity = newOpacity.slice(-3);
         newOpacity = parseFloat(newOpacity);
+        console.log(newOpacity);
         if (newOpacity < 1.0) {newOpacity = newOpacity + opacity}
-        grid.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+        grid.style.backgroundColor = `${brushColor} ${newOpacity})`;
     }
 }
 
@@ -113,4 +127,15 @@ function erase(grid) {
     grid.style.backgroundColor = "";
 }
 
-
+function hexToRgbA(hex){
+    var c;
+    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+        c= hex.substring(1).split('');
+        if(c.length== 3){
+            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c= '0x'+c.join('');
+        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',1)';
+    }
+    throw new Error('Bad Hex');
+}
