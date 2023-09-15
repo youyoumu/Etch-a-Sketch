@@ -1,6 +1,7 @@
 let gridSize = 16;
 let gridContainter = document.querySelector('#gridContainer');
 let sizeButton = document.querySelector('#sizeButton');
+let clearButton = document.querySelector('#clearButton');
 let modeNormal = document.querySelector('#modeNormal');
 let modeRainbow = document.querySelector('#modeRainbow');
 let modeEraser = document.querySelector('#modeEraser');
@@ -46,6 +47,8 @@ sizeButton.addEventListener('click', changeSizeButton);
 modeNormal.addEventListener('click', switchNormalMode);
 modeRainbow.addEventListener('click', switchRainbowMode);
 modeEraser.addEventListener('click', switchEraserMode);
+clearButton.addEventListener('click', clear);
+
 
 
 function changeSize(newSize) {
@@ -73,6 +76,11 @@ function changeSizeButton() {
 function switchNormalMode() {mode = 1;};
 function switchRainbowMode() {mode = 2;};
 function switchEraserMode() {mode = 0;};
+
+function clear() {
+    let everyGrid = document.querySelectorAll('.grid');
+    everyGrid.forEach(grid => grid.style.backgroundColor = ""); 
+}
 
 function getRandomNumber0255() {
     let number = Math.floor(Math.random() * 256);

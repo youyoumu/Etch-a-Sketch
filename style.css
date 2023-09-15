@@ -21,7 +21,7 @@ body {
     outline-offset: 0cap;
 }
 
-#sizeButton, #modeNormal, #modeRainbow, #modeEraser {
+#sizeButton, #modeNormal, #modeRainbow, #modeEraser, #clearButton {
     background-color: rgb(231, 195, 171);
     margin: 10px;
     border-radius: 10px;
