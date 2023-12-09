@@ -1,4 +1,4 @@
-# Etch-a-Sketch
+# etch-a-sketch
 
 This is part of The Odin Project course
 
